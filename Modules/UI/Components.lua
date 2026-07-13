@@ -57,6 +57,21 @@ function Components.CreateLabel(Properties)
 
 end
 
+function Components.CreateButton(Properties)
+
+    local Button = Instance.new("TextButton")
+
+    Button.BackgroundColor3 = Theme.Colors.Background
+    Button.Text = ""
+    Button.AutoButtonColor = false
+    Button.BorderSizePixel = 0
+
+    ApplyProperties(Button, Properties)
+
+    return Button
+
+end
+
 function Components.CreateCorner(Parent, Radius)
 
     local Corner = Instance.new("UICorner")
