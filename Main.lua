@@ -39,6 +39,8 @@ Sidebar.Init(App)
 
 local UI = Build.Build()
 
+Sidebar.Build(UI)
+
 
 local Main = Hub:CreatePage("Main")
 local Game = Hub:CreatePage("Game")
