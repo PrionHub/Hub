@@ -62,7 +62,7 @@ function Build.Build()
 
     UI.Logo = Instance.new("ImageLabel")
 
-    UI.Logo.Size = UDim2.fromOffset(140, 80)
+    UI.Logo.Size = UDim2.fromOffset(140, 70)
 
     UI.Logo.Position = UDim2.fromOffset(8, -5)
 
