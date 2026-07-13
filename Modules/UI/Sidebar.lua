@@ -56,21 +56,13 @@ function Sidebar.AddButton(Name)
 
     })
 
-    local Corner = Instance.new("UICorner")
+    Components.CreateCorner(Button)
 
-    Corner.CornerRadius = UDim.new(0, 4)
-
-    Corner.Parent = Button
-
-    local Stroke = Instance.new("UIStroke")
-
-    Stroke.Color = Theme.Colors.Stroke
-
-    Stroke.Thickness = 1
-
-    Stroke.Enabled = false
-
-    Stroke.Parent = Button
+    local Stroke = Components.CreateStroke(Button, {
+    
+        Enabled = false
+    
+    })
 
     local Label = Components.CreateLabel({
 
