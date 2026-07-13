@@ -57,37 +57,7 @@ function Build.Build()
     Stroke.Thickness = 2
 
     Stroke.Parent = UI.MainFrame
-
-    -- Header
-
-    UI.Header = Instance.new("Frame")
-
-    UI.Header.Size = UDim2.new(
-
-        1,
-        0,
-
-        0,
-        Theme.Sizes.HeaderHeight
-
-    )
-
-    UI.Header.BackgroundTransparency = 1
-
-    UI.Header.Parent = UI.MainFrame
-
-    local HeaderLine = Instance.new("Frame")
-
-    HeaderLine.Size = UDim2.new(1, 0, 0, 1)
-
-    HeaderLine.Position = UDim2.new(0, 0, 1, -1)
-
-    HeaderLine.BackgroundColor3 = Theme.Colors.Stroke
-
-    HeaderLine.BorderSizePixel = 0
-
-    HeaderLine.Parent = UI.Header
-
+    
     -- Logo
 
     UI.Logo = Instance.new("ImageLabel")
@@ -98,35 +68,32 @@ function Build.Build()
 
     UI.Logo.BackgroundTransparency = 1
 
-    UI.Logo.Parent = UI.Header
+    UI.Logo.Parent = UI.MainFrame
 
     Assets.LoadImage(UI.Logo)
 
     -- Sidebar
 
-    UI.Sidebar = Instance.new("Frame")
-
     UI.Sidebar.Size = UDim2.new(
 
         0,
         Theme.Sizes.SidebarWidth,
-
+    
         1,
-        -80
-
+        0
+    
     )
-
-    UI.Sidebar.Position = UDim2.fromOffset(0, 80)
-
+    
+    UI.Sidebar.Position = UDim2.fromOffset(0, 0)
     UI.Sidebar.BackgroundTransparency = 1
 
     UI.Sidebar.Parent = UI.MainFrame
 
     local SidebarLine = Instance.new("Frame")
 
-    SidebarLine.Size = UDim2.new(0, 1, 1, 27)
+    SidebarLine.Size = UDim2.new(0, 1, 1, 0)
 
-    SidebarLine.Position = UDim2.new(1, -1, 0, -25)
+    SidebarLine.Position = UDim2.new(1, -1, 0, 0)
 
     SidebarLine.BackgroundColor3 = Theme.Colors.Stroke
 
@@ -232,19 +199,17 @@ function Build.Build()
 
     -- Content
 
-    UI.Content = Instance.new("Frame")
-
     UI.Content.Size = UDim2.new(
 
         1,
         -180,
-
+    
         1,
-        -80
-
+        0
+    
     )
-
-    UI.Content.Position = UDim2.fromOffset(180, 80)
+    
+    UI.Content.Position = UDim2.fromOffset(180, 0)
 
     UI.Content.BackgroundTransparency = 1
 
