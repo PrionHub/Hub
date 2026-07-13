@@ -85,4 +85,17 @@ function Components.CreateStroke(Parent, Properties)
 
 end
 
+function Components.CreateListLayout(Properties)
+
+    local Layout = Instance.new("UIListLayout")
+
+    Layout.FillDirection = Enum.FillDirection.Vertical
+    Layout.SortOrder = Enum.SortOrder.LayoutOrder
+
+    ApplyProperties(Layout, Properties)
+
+    return Layout
+
+end
+
 return Components
