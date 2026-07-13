@@ -2,6 +2,20 @@ local Components = {}
 
 local Theme
 
+local function ApplyProperties(Object, Properties)
+
+    if not Properties then
+        return
+    end
+
+    for Property, Value in pairs(Properties) do
+
+        Object[Property] = Value
+
+    end
+
+end
+
 function Components.Init(App)
 
     Theme = App.Theme
@@ -17,11 +31,7 @@ function Components.CreateFrame(Properties)
 
     Frame.BorderSizePixel = 0
 
-    for Property, Value in pairs(Properties) do
-
-        Frame[Property] = Value
-
-    end
+    ApplyProperties(Frame, Properties)
 
     return Frame
 
@@ -41,13 +51,37 @@ function Components.CreateLabel(Properties)
 
     Label.BorderSizePixel = 0
 
-    for Property, Value in pairs(Properties) do
-
-        Label[Property] = Value
-
-    end
+    ApplyProperties(Frame, Properties)
 
     return Label
+
+end
+
+function Components.CreateCorner(Parent, Radius)
+
+    local Corner = Instance.new("UICorner")
+
+    Corner.CornerRadius = Radius or UDim.new(0, 4)
+
+    Corner.Parent = Parent
+
+    return Corner
+
+end
+
+function Components.CreateStroke(Parent, Properties)
+
+    local Stroke = Instance.new("UIStroke")
+
+    Stroke.Color = Theme.Colors.Stroke
+
+    Stroke.Thickness = 1
+
+    ApplyProperties(Stroke, Properties)
+
+    Stroke.Parent = Parent
+
+    return Stroke
 
 end
 
