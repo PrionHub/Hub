@@ -47,6 +47,8 @@ function Sidebar.AddButton(Properties)
 
         Name = Name,
     
+        Text = Name,
+    
         Size = UDim2.new(1, 0, 0, 32),
     
         Parent = Navigation
@@ -61,18 +63,6 @@ function Sidebar.AddButton(Properties)
     
     })
 
-    local Label = Components.CreateLabel({
-
-        Size = UDim2.new(1, 0, 1, 0),
-
-        Text = Name,
-
-        TextSize = 14,
-
-        Parent = Button
-
-    })
-
     local ButtonObject = {
 
         Name = Name,
@@ -81,8 +71,6 @@ function Sidebar.AddButton(Properties)
     
         Stroke = Stroke,
     
-        Label = Label,
-
         Selected = false
     
     }
