@@ -19,6 +19,9 @@ local Page =
 local Hub =
     loadstring(game:HttpGet(Base.."Modules/Core/Hub.lua"))()
 
+local Sidebar =
+    loadstring(game:HttpGet(Base.."Modules/UI/Sidebar.lua"))()
+
 local App = {}
 
 App.Theme = Theme
@@ -27,10 +30,12 @@ App.Assets = Assets
 App.Build = Build
 App.Page = Page
 App.Hub = Hub
+App.Sidebar = Sidebar
 
 Components.Init(App)
 Build.Init(App)
 Hub.Init(App)
+Sidebar.Init(App)
 
 local UI = Build.Build()
 
