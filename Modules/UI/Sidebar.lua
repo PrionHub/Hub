@@ -3,7 +3,7 @@ local Sidebar = {}
 local Theme
 local Components
 local Navigation
-local Buttons = {}
+Sidebar.Buttons = {}
 
 function Sidebar.Init(App)
 
@@ -42,6 +42,7 @@ end
 
 function Sidebar.AddButton(Properties)
 
+    local Name = Properties.Name
     local Button = Components.CreateFrame({
 
         Name = Name,
@@ -82,11 +83,13 @@ function Sidebar.AddButton(Properties)
     
         Stroke = Stroke,
     
-        Label = Label
+        Label = Label,
+
+        Selected = false
     
     }
     
-    Buttons[Name] = ButtonObject
+    Sidebar.Buttons[Name] = ButtonObject
     
     return ButtonObject
 
