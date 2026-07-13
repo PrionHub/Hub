@@ -3,6 +3,7 @@ local Sidebar = {}
 local Theme
 local Components
 local Navigation
+local Buttons = {}
 
 function Sidebar.Init(App)
 
@@ -38,6 +39,60 @@ function Sidebar.Build(UI)
     Layout.SortOrder = Enum.SortOrder.LayoutOrder
 
     Layout.Parent = Navigation
+
+end
+
+function Sidebar.AddButton(Name)
+
+    local Button = Components.CreateFrame({
+
+        Name = Name,
+
+        Size = UDim2.new(1, 0, 0, 32),
+
+        BackgroundTransparency = 1,
+
+        Parent = Navigation
+
+    })
+
+    local Corner = Instance.new("UICorner")
+
+    Corner.CornerRadius = UDim.new(0, 4)
+
+    Corner.Parent = Button
+
+    local Stroke = Instance.new("UIStroke")
+
+    Stroke.Color = Theme.Colors.Stroke
+
+    Stroke.Thickness = 1
+
+    Stroke.Enabled = false
+
+    Stroke.Parent = Button
+
+    local Label = Components.CreateLabel({
+
+        Size = UDim2.new(1, 0, 1, 0),
+
+        Text = Name,
+
+        TextSize = 14,
+
+        Parent = Button
+
+    })
+
+    Buttons[Name] = {
+
+        Frame = Button,
+
+        Stroke = Stroke,
+
+        Label = Label
+
+    }
 
 end
 
