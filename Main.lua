@@ -40,6 +40,7 @@ Sidebar.Init(App)
 local UI = Build.Build()
 
 Sidebar.Build(UI)
+Sidebar.AddButton("Main")
 
 
 local Main = Hub:CreatePage("Main")
