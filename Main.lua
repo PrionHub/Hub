@@ -33,3 +33,12 @@ Build.Init(App)
 Hub.Init(App)
 
 local UI = Build.Build()
+
+
+local Main = Hub:CreatePage("Main")
+local Game = Hub:CreatePage("Game")
+local Visual = Hub:CreatePage("Visual")
+local Themes = Hub:CreatePage("Themes")
+local Settings = Hub:CreatePage("Settings")
+
+print(#Hub.Pages)
