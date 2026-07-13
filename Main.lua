@@ -13,14 +13,23 @@ local Assets =
 local Build =
     loadstring(game:HttpGet(Base.."Modules/UI/Build.lua"))()
 
+local Page =
+    loadstring(game:HttpGet(Base.."Modules/UI/Page.lua"))()
+
+local Hub =
+    loadstring(game:HttpGet(Base.."Modules/Core/Hub.lua"))()
+
 local App = {}
 
 App.Theme = Theme
 App.Components = Components
 App.Assets = Assets
 App.Build = Build
+App.Page = Page
+App.Hub = Hub
 
 Components.Init(App)
 Build.Init(App)
+Hub.Init(App)
 
 local UI = Build.Build()
