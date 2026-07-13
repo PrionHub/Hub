@@ -62,9 +62,12 @@ function Components.CreateButton(Properties)
     local Button = Instance.new("TextButton")
 
     Button.BackgroundColor3 = Theme.Colors.Background
-    Button.Text = ""
-    Button.AutoButtonColor = false
     Button.BorderSizePixel = 0
+    Button.AutoButtonColor = false
+
+    Button.Font = Theme.Fonts.Regular
+    Button.TextColor3 = Theme.Colors.Text
+    Button.TextSize = 14
 
     ApplyProperties(Button, Properties)
 
