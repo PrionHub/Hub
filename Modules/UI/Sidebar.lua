@@ -67,7 +67,7 @@ function Sidebar.AddButton(Properties)
 
         Name = Name,
     
-        Frame = Button,
+        Button = Button,
     
         Stroke = Stroke,
     
