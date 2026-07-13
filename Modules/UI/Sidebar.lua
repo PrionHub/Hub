@@ -28,17 +28,15 @@ function Sidebar.Build(UI)
 
     })
 
-    local Layout = Instance.new("UIListLayout")
+    Components.CreateListLayout({
 
-    Layout.Padding = UDim.new(0, 6)
-
-    Layout.FillDirection = Enum.FillDirection.Vertical
-
-    Layout.HorizontalAlignment = Enum.HorizontalAlignment.Center
-
-    Layout.SortOrder = Enum.SortOrder.LayoutOrder
-
-    Layout.Parent = Navigation
+        Padding = UDim.new(0,6),
+    
+        HorizontalAlignment = Enum.HorizontalAlignment.Center,
+    
+        Parent = Navigation
+    
+    })
 
 end
 
