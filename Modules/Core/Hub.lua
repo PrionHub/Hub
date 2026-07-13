@@ -1,10 +1,22 @@
 local Hub = {}
 
+local Page
+
 Hub.Pages = {}
 
 function Hub.Init(App)
 
-    Hub.App = App
+    Page = App.Page
+
+end
+
+function Hub:CreatePage(Name)
+
+    local NewPage = Page.new(Name)
+
+    table.insert(self.Pages, NewPage)
+
+    return NewPage
 
 end
 
