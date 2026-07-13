@@ -43,16 +43,14 @@ end
 function Sidebar.AddButton(Properties)
 
     local Name = Properties.Name
-    local Button = Components.CreateFrame({
+    local Button = Components.CreateButton({
 
         Name = Name,
-
+    
         Size = UDim2.new(1, 0, 0, 32),
-
-        BackgroundTransparency = 1,
-
+    
         Parent = Navigation
-
+    
     })
 
     Components.CreateCorner(Button)
