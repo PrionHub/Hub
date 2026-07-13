@@ -74,6 +74,8 @@ function Build.Build()
 
     -- Sidebar
 
+    UI.Sidebar = Instance.new("Frame")
+
     UI.Sidebar.Size = UDim2.new(
 
         0,
@@ -198,6 +200,8 @@ function Build.Build()
     })
 
     -- Content
+
+    UI.Content = Instance.new("Frame")
 
     UI.Content.Size = UDim2.new(
 
