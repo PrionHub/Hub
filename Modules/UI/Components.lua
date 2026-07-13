@@ -51,7 +51,7 @@ function Components.CreateLabel(Properties)
 
     Label.BorderSizePixel = 0
 
-    ApplyProperties(Frame, Properties)
+    ApplyProperties(Label, Properties)
 
     return Label
 
