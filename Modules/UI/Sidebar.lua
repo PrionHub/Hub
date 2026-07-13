@@ -40,7 +40,7 @@ function Sidebar.Build(UI)
 
 end
 
-function Sidebar.AddButton(Name)
+function Sidebar.AddButton(Properties)
 
     local Button = Components.CreateFrame({
 
@@ -74,15 +74,21 @@ function Sidebar.AddButton(Name)
 
     })
 
-    Buttons[Name] = {
+    local ButtonObject = {
 
+        Name = Name,
+    
         Frame = Button,
-
+    
         Stroke = Stroke,
-
+    
         Label = Label
-
+    
     }
+    
+    Buttons[Name] = ButtonObject
+    
+    return ButtonObject
 
 end
 
