@@ -64,9 +64,16 @@ function Components.CreateButton(Properties)
     Button.BackgroundColor3 = Theme.Colors.Background
     Button.BorderSizePixel = 0
     Button.AutoButtonColor = false
+    Button.BackgroundTransparency = 0
 
     Button.Font = Theme.Fonts.Regular
     Button.TextColor3 = Theme.Colors.Text
+
+    Button.TextXAlignment = Enum.TextXAlignment.Left
+    Button.TextYAlignment = Enum.TextYAlignment.Center
+    
+    Button.Text = ""
+    Button.AutoButtonColor = false
     Button.TextSize = 14
 
     ApplyProperties(Button, Properties)
