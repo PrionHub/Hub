@@ -66,7 +66,7 @@ function Components.CreateButton(Properties)
     Button.AutoButtonColor = false
     Button.BackgroundTransparency = 0
 
-    Button.Font = Theme.Fonts.Regular
+    Button.FontFace = Theme.Fonts.Sidebar
     Button.TextColor3 = Theme.Colors.Text
 
     Button.TextXAlignment = Enum.TextXAlignment.Left
