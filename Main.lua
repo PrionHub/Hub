@@ -61,4 +61,6 @@ Sidebar.AddButton({
     Name = "Settings"
 })
 
+Sidebar.Select("Main")
+
 print(#Hub.Pages)
