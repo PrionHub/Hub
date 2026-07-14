@@ -123,4 +123,16 @@ function Components.CreateListLayout(Properties)
 
 end
 
+function Components.CreatePadding(Parent, Properties)
+
+    local Padding = Instance.new("UIPadding")
+
+    ApplyProperties(Padding, Properties)
+
+    Padding.Parent = Parent
+
+    return Padding
+
+end
+
 return Components
