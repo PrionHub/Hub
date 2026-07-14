@@ -76,6 +76,12 @@ function Sidebar.AddButton(Properties)
 
     })
 
+    Components.CreatePadding(Button, {
+
+        PaddingLeft = UDim.new(0, 10)
+    
+    })
+
     local ButtonObject = {
 
         Name = Name,
