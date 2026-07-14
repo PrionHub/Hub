@@ -18,7 +18,9 @@ Theme.Fonts = {
 
     Bold = Enum.Font.GothamBold,
 
-    Regular = Enum.Font.Gotham
+    Regular = Enum.Font.Gotham,
+
+    Sidebar = Font.fromName("Michroma")
 
 }
 
