@@ -96,11 +96,39 @@ function Sidebar.AddButton(Properties)
 
     }
 
+    function ButtonObject:Select()
+    
+        self.Selected = true
+        self.Stroke.Enabled = true
+    
+    end
+    
+    function ButtonObject:Deselect()
+    
+        self.Selected = false
+        self.Stroke.Enabled = false
+    
+    end
+
     Sidebar.Buttons[Name] = ButtonObject
 
     Button.MouseButton1Click:Connect(function()
 
-        Sidebar.Select(Name)
+        function Sidebar.Select(Name)
+
+            for _, ButtonObject in pairs(Sidebar.Buttons) do
+        
+                if ButtonObject.Name == Name then
+                    ButtonObject:Select()
+                else
+                    ButtonObject:Deselect()
+                end
+        
+            end
+        
+            Sidebar.Selected = Name
+        
+        end
 
     end)
 
