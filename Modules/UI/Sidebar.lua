@@ -12,6 +12,8 @@ function Sidebar.Init(App)
 
 end
 
+Sidebar.Selected = nil
+
 function Sidebar.Build(UI)
 
     Navigation = Components.CreateFrame({
@@ -76,8 +78,29 @@ function Sidebar.AddButton(Properties)
     }
     
     Sidebar.Buttons[Name] = ButtonObject
+
+    Button.MouseButton1Click:Connect(function()
+
+        Sidebar.Select(Name)
+    
+    end)
     
     return ButtonObject
+
+end
+
+function Sidebar.Select(Name)
+
+    for ButtonName, ButtonObject in pairs(Sidebar.Buttons) do
+
+        local Selected = (ButtonName == Name)
+
+        ButtonObject.Selected = Selected
+        ButtonObject.Stroke.Enabled = Selected
+
+    end
+
+    Sidebar.Selected = Name
 
 end
 
