@@ -45,44 +45,59 @@ end
 function Sidebar.AddButton(Properties)
 
     local Name = Properties.Name
+
     local Frame = Components.CreateFrame({
 
         Name = Name,
-    
+
         Size = UDim2.new(1, 0, 0, 32),
-    
+
         Parent = Navigation
-    
+
     })
 
-    Components.CreateCorner(Button)
+    Components.CreateCorner(Frame)
 
-    local Stroke = Components.CreateStroke(Button, {
-    
+    local Stroke = Components.CreateStroke(Frame, {
+
         Enabled = false
-    
+
+    })
+
+    local Button = Components.CreateButton({
+
+        Size = UDim2.new(1, 0, 1, 0),
+
+        BackgroundTransparency = 1,
+
+        Text = Name,
+
+        Parent = Frame
+
     })
 
     local ButtonObject = {
 
         Name = Name,
-    
+
+        Frame = Frame,
+
         Button = Button,
-    
+
         Stroke = Stroke,
-    
+
         Selected = false
-    
+
     }
-    
+
     Sidebar.Buttons[Name] = ButtonObject
 
     Button.MouseButton1Click:Connect(function()
 
         Sidebar.Select(Name)
-    
+
     end)
-    
+
     return ButtonObject
 
 end
