@@ -45,11 +45,9 @@ end
 function Sidebar.AddButton(Properties)
 
     local Name = Properties.Name
-    local Button = Components.CreateButton({
+    local Frame = Components.CreateFrame({
 
         Name = Name,
-    
-        Text = Name,
     
         Size = UDim2.new(1, 0, 0, 32),
     
