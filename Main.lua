@@ -22,6 +22,9 @@ local Hub =
 local Sidebar =
     loadstring(game:HttpGet(Base.."Modules/UI/Sidebar.lua"))()
 
+local Animation =
+    loadstring(game:HttpGet(Base.."Modules/Utils/Animation.lua"))()
+
 local App = {}
 
 App.Theme = Theme
@@ -31,6 +34,7 @@ App.Build = Build
 App.Page = Page
 App.Hub = Hub
 App.Sidebar = Sidebar
+App.Animation = Animation
 
 Components.Init(App)
 Build.Init(App)
