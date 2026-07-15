@@ -86,7 +86,7 @@ function Sidebar.AddButton(Properties)
 
         Name = Name,
 
-        Frame = Frame,
+        Container = Frame,
 
         Button = Button,
 
@@ -94,7 +94,7 @@ function Sidebar.AddButton(Properties)
 
         Selected = false,
 
-        Size = Frame.Size
+        OriginalSize = Frame.Size
 
     }
 
