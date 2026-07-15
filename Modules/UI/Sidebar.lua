@@ -148,6 +148,10 @@ end
 
 function Sidebar.Select(Name)
 
+    if Sidebar.Selected == Name then
+        return
+    end
+
     for _, ButtonObject in pairs(Sidebar.Buttons) do
 
         if ButtonObject.Name == Name then
