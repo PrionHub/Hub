@@ -39,6 +39,32 @@ function Hub:CreatePage(Name)
 
     NewPage.Container = Container
 
+    NewPage.LeftColumn = Components.CreateFrame({
+
+        Name = "LeftColumn",
+    
+        Size = UDim2.new(0.5, -6, 1, 0),
+    
+        BackgroundTransparency = 1,
+    
+        Parent = Container
+    
+    })
+    
+    NewPage.RightColumn = Components.CreateFrame({
+    
+        Name = "RightColumn",
+    
+        Size = UDim2.new(0.5, -6, 1, 0),
+    
+        Position = UDim2.new(0.5, 6, 0, 0),
+    
+        BackgroundTransparency = 1,
+    
+        Parent = Container
+    
+    })
+
     table.insert(self.Pages, NewPage)
 
     return NewPage
