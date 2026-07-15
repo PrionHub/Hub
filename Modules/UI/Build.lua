@@ -201,23 +201,33 @@ function Build.Build()
 
     -- Content
 
-    UI.Content = Instance.new("Frame")
+    UI.Content = Components.CreateFrame({
 
-    UI.Content.Size = UDim2.new(
-
-        1,
-        -180,
+        Name = "Content",
     
-        1,
-        0
+        Size = UDim2.new(
     
-    )
+            1,
+            -Theme.Sizes.SidebarWidth,
     
-    UI.Content.Position = UDim2.fromOffset(180, 0)
-
-    UI.Content.BackgroundTransparency = 1
-
-    UI.Content.Parent = UI.MainFrame
+            1,
+            0
+    
+        ),
+    
+        Position = UDim2.fromOffset(
+    
+            Theme.Sizes.SidebarWidth,
+    
+            0
+    
+        ),
+    
+        BackgroundTransparency = 1,
+    
+        Parent = UI.MainFrame
+    
+    })
 
     return UI
 
