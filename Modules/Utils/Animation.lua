@@ -38,4 +38,18 @@ function Animation.Tween(Object, Info, Properties)
 
 end
 
+function Animation.Play(Object, Properties)
+
+    return Animation.Tween(
+
+        Object,
+
+        Animation.Info.Fast,
+
+        Properties
+
+    )
+
+end
+
 return Animation
