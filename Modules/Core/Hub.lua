@@ -1,5 +1,5 @@
 local Hub = {}
-
+local UI
 local Page
 
 Hub.Pages = {}
@@ -7,6 +7,12 @@ Hub.Pages = {}
 function Hub.Init(App)
 
     Page = App.Page
+
+end
+
+function Hub.SetUI(NewUI)
+
+    UI = NewUI
 
 end
 
