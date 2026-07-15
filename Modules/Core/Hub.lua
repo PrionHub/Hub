@@ -23,63 +23,7 @@ function Hub:CreatePage(Name)
 
     local NewPage = Page.new(Name)
 
-    local Container = Components.CreateFrame({
-
-        Name = Name,
-
-        Size = UDim2.fromScale(1,1),
-
-        BackgroundTransparency = 1,
-
-        Visible = false,
-
-        Parent = UI.Content
-
-    })
-
-    NewPage.Container = Container
-
-    NewPage.LeftColumn = Components.CreateFrame({
-
-        Name = "LeftColumn",
-    
-        Size = UDim2.new(0.5, -6, 1, 0),
-    
-        BackgroundTransparency = 1,
-    
-        Parent = Container
-    
-    })
-
-    Components.CreateListLayout({
-
-        Padding = UDim.new(0, 10),
-    
-        Parent = NewPage.LeftColumn
-    
-    })
-    
-    NewPage.RightColumn = Components.CreateFrame({
-    
-        Name = "RightColumn",
-    
-        Size = UDim2.new(0.5, -6, 1, 0),
-    
-        Position = UDim2.new(0.5, 6, 0, 0),
-    
-        BackgroundTransparency = 1,
-    
-        Parent = Container
-    
-    })
-
-    Components.CreateListLayout({
-
-        Padding = UDim.new(0,10),
-    
-        Parent = NewPage.RightColumn
-    
-    })
+    NewPage:Build(UI.Content)
 
     table.insert(self.Pages, NewPage)
 
