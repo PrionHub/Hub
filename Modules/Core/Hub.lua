@@ -50,6 +50,14 @@ function Hub:CreatePage(Name)
         Parent = Container
     
     })
+
+    Components.CreateListLayout({
+
+        Padding = UDim.new(0, 10),
+    
+        Parent = NewPage.LeftColumn
+    
+    })
     
     NewPage.RightColumn = Components.CreateFrame({
     
@@ -62,6 +70,14 @@ function Hub:CreatePage(Name)
         BackgroundTransparency = 1,
     
         Parent = Container
+    
+    })
+
+    Components.CreateListLayout({
+
+        Padding = UDim.new(0,10),
+    
+        Parent = NewPage.RightColumn
     
     })
 
