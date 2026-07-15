@@ -6,6 +6,8 @@ Theme.Colors = {
 
     SidebarSelected = Color3.fromRGB(18,18,18),
 
+    Sidebar = Color3.fromRGB(10, 10, 10)
+
     Stroke = Color3.fromRGB(220, 40, 40),
 
     Text = Color3.new(1, 1, 1),
