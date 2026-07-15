@@ -129,25 +129,9 @@ function Sidebar.AddButton(Properties)
             Sidebar.Selected = Name
         
         end
-
     end)
 
     return ButtonObject
-
-end
-
-function Sidebar.Select(Name)
-
-    for ButtonName, ButtonObject in pairs(Sidebar.Buttons) do
-
-        local Selected = (ButtonName == Name)
-
-        ButtonObject.Selected = Selected
-        ButtonObject.Stroke.Enabled = Selected
-
-    end
-
-    Sidebar.Selected = Name
 
 end
 
