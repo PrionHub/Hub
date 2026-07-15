@@ -1,5 +1,15 @@
 local Page = {}
 
+local Components
+local Section
+
+function Page.Init(App)
+
+    Components = App.Components
+    Section = App.Section
+
+end
+
 Page.__index = Page
 
 function Page.new(Name)
@@ -41,6 +51,20 @@ end
 function Page:AddSection(Name)
 
     local NewSection = Section.new(Name)
+
+    local Container = Components.CreateFrame({
+
+        Name = Name,
+
+        Size = UDim2.fromOffset(250, 150),
+
+        Position = UDim2.fromOffset(20, 20),
+
+        Parent = self.Container
+
+    })
+
+    NewSection.Container = Container
 
     table.insert(self.Sections, NewSection)
 
