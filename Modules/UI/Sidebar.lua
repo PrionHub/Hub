@@ -62,8 +62,8 @@ function Sidebar.AddButton(Properties)
 
     local Stroke = Components.CreateStroke(Frame, {
 
-        Enabled = false
-
+        Transparency = 1
+    
     })
 
     local Button = Components.CreateButton({
