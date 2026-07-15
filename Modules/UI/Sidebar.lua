@@ -92,7 +92,9 @@ function Sidebar.AddButton(Properties)
 
         Stroke = Stroke,
 
-        Selected = false
+        Selected = false,
+
+        Size = Frame.Size
 
     }
 
@@ -114,24 +116,27 @@ function Sidebar.AddButton(Properties)
 
     Button.MouseButton1Click:Connect(function()
 
-        function Sidebar.Select(Name)
-
-            for _, ButtonObject in pairs(Sidebar.Buttons) do
-        
-                if ButtonObject.Name == Name then
-                    ButtonObject:Select()
-                else
-                    ButtonObject:Deselect()
-                end
-        
-            end
-        
-            Sidebar.Selected = Name
-        
-        end
+        Sidebar.Select(Name)
+    
     end)
 
     return ButtonObject
+
+end
+
+function Sidebar.Select(Name)
+
+    for _, ButtonObject in pairs(Sidebar.Buttons) do
+
+        if ButtonObject.Name == Name then
+            ButtonObject:Select()
+        else
+            ButtonObject:Deselect()
+        end
+
+    end
+
+    Sidebar.Selected = Name
 
 end
 
