@@ -24,31 +24,51 @@ Animation.Info = {
 
 }
 
+Animation.Active = {}
+
 function Animation.Tween(Object, Info, Properties)
 
+    local CurrentTween = Animation.Active[Object]
+
+    if CurrentTween then
+
+        CurrentTween:Cancel()
+
+    end
+
     local Tween = TweenService:Create(
+
         Object,
+
         Info,
+
         Properties
+
     )
 
+    Animation.Active[Object] = Tween
+
     Tween:Play()
+
+    Tween.Completed:Connect(function()
+
+        if Animation.Active[Object] == Tween then
+
+            Animation.Active[Object] = nil
+
+        end
+
+    end)
 
     return Tween
 
 end
 
-function Animation.Play(Object, Properties)
+function Animation.Stop(Tween)
 
-    return Animation.Tween(
-
-        Object,
-
-        Animation.Info.Fast,
-
-        Properties
-
-    )
+    if Tween then
+        Tween:Cancel()
+    end
 
 end
 
