@@ -16,6 +16,8 @@ function Section.new(Name)
 
     self.Name = Name
     self.Container = nil
+    self.Header = nil
+    self.Content = nil
     self.Elements = {}
 
     return self
