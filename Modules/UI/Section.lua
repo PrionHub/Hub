@@ -1,4 +1,13 @@
 local Section = {}
+local Components
+local Section
+
+function Page.Init(App)
+
+    Components = App.Components
+    Section = App.Section
+
+end
 
 Section.__index = Section
 
