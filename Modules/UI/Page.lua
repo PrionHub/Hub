@@ -30,6 +30,66 @@ function Page.new(Name)
 
 end
 
+function Page:Build(Parent)
+
+    self.Container = Components.CreateFrame({
+
+        Name = self.Name,
+
+        Size = UDim2.fromScale(1, 1),
+
+        BackgroundTransparency = 1,
+
+        Visible = false,
+
+        Parent = Parent
+
+    })
+
+    self.LeftColumn = Components.CreateFrame({
+
+        Name = "LeftColumn",
+
+        Size = UDim2.new(0.5, -6, 1, 0),
+
+        BackgroundTransparency = 1,
+
+        Parent = self.Container
+
+    })
+
+    Components.CreateListLayout({
+
+        Padding = UDim.new(0, 10),
+
+        Parent = self.LeftColumn
+
+    })
+
+    self.RightColumn = Components.CreateFrame({
+
+        Name = "RightColumn",
+
+        Size = UDim2.new(0.5, -6, 1, 0),
+
+        Position = UDim2.new(0.5, 6, 0, 0),
+
+        BackgroundTransparency = 1,
+
+        Parent = self.Container
+
+    })
+
+    Components.CreateListLayout({
+
+        Padding = UDim.new(0, 10),
+
+        Parent = self.RightColumn
+
+    })
+
+end
+
 function Page:Show()
 
     self.Visible = true
