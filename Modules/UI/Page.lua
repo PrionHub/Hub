@@ -10,7 +10,7 @@ function Page.new(Name)
 
     self.Container = nil
 
-    self.Elements = {}
+    self.Sections = {}
 
     self.Visible = false
 
