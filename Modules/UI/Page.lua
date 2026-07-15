@@ -22,6 +22,8 @@ function Page.new(Name)
 
     self.Sections = {}
 
+    self.NextColumn = "Left"
+
     self.Visible = false
 
     return self
@@ -52,15 +54,27 @@ function Page:AddSection(Name)
 
     local NewSection = Section.new(Name)
 
+    local Parent
+
+    if self.NextColumn == "Left" then
+
+        Parent = self.LeftColumn
+        self.NextColumn = "Right"
+
+    else
+
+        Parent = self.RightColumn
+        self.NextColumn = "Left"
+
+    end
+
     local Container = Components.CreateFrame({
 
         Name = Name,
 
-        Size = UDim2.fromOffset(250, 150),
+        Size = UDim2.new(1, 0, 0, 150),
 
-        Position = UDim2.fromOffset(20, 20),
-
-        Parent = self.Container
+        Parent = Parent
 
     })
 
