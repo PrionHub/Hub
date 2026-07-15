@@ -6,6 +6,16 @@ local Components
 local Navigation
 Sidebar.Buttons = {}
 
+local DefaultPages = {
+
+    "Main",
+    "Game",
+    "Visual",
+    "Themes",
+    "Settings"
+
+}
+
 function Sidebar.Init(App)
 
     Theme = App.Theme
@@ -41,6 +51,18 @@ function Sidebar.Build(UI)
         Parent = Navigation
     
     })
+
+    for _, Name in ipairs(DefaultButtons) do
+
+        Sidebar.AddButton({
+    
+            Name = Name
+    
+        })
+    
+    end
+    
+    Sidebar.Select("Main")
 
 end
 
