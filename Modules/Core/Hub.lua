@@ -2,6 +2,7 @@ local Hub = {}
 local UI
 local Page
 local Components
+Hub.CurrentPage = nil
 
 Hub.Pages = {}
 
@@ -41,6 +42,30 @@ function Hub:CreatePage(Name)
     table.insert(self.Pages, NewPage)
 
     return NewPage
+
+end
+
+function Hub:SelectPage(Name)
+
+    if self.CurrentPage == Name then
+        return
+    end
+
+    for _, Page in ipairs(self.Pages) do
+
+        if Page.Name == Name then
+
+            Page:Show()
+
+        else
+
+            Page:Hide()
+
+        end
+
+    end
+
+    self.CurrentPage = Name
 
 end
 
