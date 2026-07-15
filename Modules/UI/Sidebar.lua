@@ -5,14 +5,29 @@ local Animation
 local Components
 local Navigation
 Sidebar.Buttons = {}
+Sidebar.Selected = nil
 
-local DefaultPages = {
+Sidebar.Pages = {
 
-    "Main",
-    "Game",
-    "Visual",
-    "Themes",
-    "Settings"
+    {
+        Name = "Main"
+    },
+
+    {
+        Name = "Game"
+    },
+
+    {
+        Name = "Visual"
+    },
+
+    {
+        Name = "Themes"
+    },
+
+    {
+        Name = "Settings"
+    }
 
 }
 
@@ -23,8 +38,6 @@ function Sidebar.Init(App)
     Animation = App.Animation
 
 end
-
-Sidebar.Selected = nil
 
 function Sidebar.Build(UI)
 
@@ -52,23 +65,19 @@ function Sidebar.Build(UI)
     
     })
 
-    for _, Name in ipairs(DefaultButtons) do
+    for _, Page in ipairs(Sidebar.Pages) do
 
-        Sidebar.AddButton({
-    
-            Name = Name
-    
-        })
+        Sidebar.AddButton(Page)
     
     end
     
-    Sidebar.Select("Main")
+    Sidebar.Select(Sidebar.Pages[1].Name)
 
 end
 
-function Sidebar.AddButton(Properties)
+function Sidebar.AddButton(Page)
 
-    local Name = Properties.Name
+    local Name = Page.Name
 
     local Frame = Components.CreateFrame({
 
@@ -150,7 +159,7 @@ function Sidebar.AddButton(Properties)
     
         Animation.Play(self.Container, {
     
-            BackgroundColor3 = Theme.Colors.Background
+            BackgroundColor3 = Theme.Colors.Sidebar
     
         })
     
