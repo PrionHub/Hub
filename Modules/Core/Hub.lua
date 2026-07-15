@@ -1,7 +1,6 @@
 local Hub = {}
 local UI
 local Page
-local Components
 Hub.CurrentPage = nil
 
 Hub.Pages = {}
@@ -9,7 +8,6 @@ Hub.Pages = {}
 function Hub.Init(App)
 
     Page = App.Page
-    Components = App.Components
 
 end
 
