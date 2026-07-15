@@ -128,19 +128,7 @@ function Page:AddSection(Name)
 
     end
 
-    local Container = Components.CreateFrame({
-
-        Name = Name,
-
-        Size = UDim2.new(1, 0, 0, 150),
-
-        BackgroundTransparency = 1,
-
-        Parent = Parent
-
-    })
-
-    NewSection.Container = Container
+    NewSection:Build(Parent)
 
     table.insert(self.Sections, NewSection)
 
