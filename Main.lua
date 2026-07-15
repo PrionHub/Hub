@@ -44,11 +44,3 @@ Sidebar.Init(App)
 local UI = Build.Build()
 Hub.SetUI(UI)
 Sidebar.Build(UI)
-
-local MainPage = Hub:CreatePage("Main")
-local GamePage = Hub:CreatePage("Game")
-local VisualPage = Hub:CreatePage("Visual")
-local ThemesPage = Hub:CreatePage("Themes")
-local SettingsPage = Hub:CreatePage("Settings")
-
-Hub:SelectPage("Main")
