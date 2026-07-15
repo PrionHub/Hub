@@ -1,5 +1,7 @@
 local Sidebar = {}
 
+local TweenService = game:GetService("TweenService")
+
 local Theme
 local Components
 local Navigation
@@ -101,7 +103,30 @@ function Sidebar.AddButton(Properties)
     function ButtonObject:Select()
     
         self.Selected = true
+
         self.Stroke.Enabled = true
+        
+        TweenService:Create(
+        
+            self.Frame,
+        
+            TweenInfo.new(
+        
+                0.12,
+        
+                Enum.EasingStyle.Quad,
+        
+                Enum.EasingDirection.Out
+        
+            ),
+        
+            {
+        
+                Size = self.Size + UDim2.fromOffset(4, 2)
+        
+            }
+        
+        ):Play()
     
     end
     
