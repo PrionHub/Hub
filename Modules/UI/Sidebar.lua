@@ -1,8 +1,7 @@
 local Sidebar = {}
 
-local TweenService = game:GetService("TweenService")
-
 local Theme
+local Animation
 local Components
 local Navigation
 Sidebar.Buttons = {}
@@ -11,6 +10,7 @@ function Sidebar.Init(App)
 
     Theme = App.Theme
     Components = App.Components
+    Animation = App.Animation
 
 end
 
@@ -101,39 +101,46 @@ function Sidebar.AddButton(Properties)
     }
 
     function ButtonObject:Select()
-    
-        self.Selected = true
 
+        self.Selected = true
+    
         self.Stroke.Enabled = true
-        
-        TweenService:Create(
-        
-            self.Frame,
-        
-            TweenInfo.new(
-        
-                0.12,
-        
-                Enum.EasingStyle.Quad,
-        
-                Enum.EasingDirection.Out
-        
-            ),
-        
+    
+        Animation.Tween(
+    
+            self.Container,
+    
+            Animation.Info.Fast,
+    
             {
-        
-                Size = self.Size + UDim2.fromOffset(4, 2)
-        
+    
+                BackgroundTransparency = 0.2
+    
             }
-        
-        ):Play()
+    
+        )
     
     end
     
     function ButtonObject:Deselect()
-    
+
         self.Selected = false
+    
         self.Stroke.Enabled = false
+    
+        Animation.Tween(
+    
+            self.Container,
+    
+            Animation.Info.Fast,
+    
+            {
+    
+                BackgroundTransparency = 0
+    
+            }
+    
+        )
     
     end
 
