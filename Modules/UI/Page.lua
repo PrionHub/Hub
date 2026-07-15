@@ -38,4 +38,14 @@ function Page:Hide()
 
 end
 
+function Page:AddSection(Name)
+
+    local NewSection = Section.new(Name)
+
+    table.insert(self.Sections, NewSection)
+
+    return NewSection
+
+end
+
 return Page
