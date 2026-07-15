@@ -96,8 +96,6 @@ function Sidebar.AddButton(Properties)
 
         Selected = false,
 
-        OriginalSize = Frame.Size
-
     }
 
     function ButtonObject:Select()
