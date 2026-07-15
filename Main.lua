@@ -45,6 +45,7 @@ Build.Init(App)
 Hub.Init(App)
 Sidebar.Init(App)
 Page.Init(App)
+Section.Init(App)
 
 local UI = Build.Build()
 Hub.SetUI(UI)
