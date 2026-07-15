@@ -102,6 +102,8 @@ function Components.CreateStroke(Parent, Properties)
 
     Stroke.Thickness = 1
 
+    Stroke.Transparency = 0
+
     ApplyProperties(Stroke, Properties)
 
     Stroke.Parent = Parent
