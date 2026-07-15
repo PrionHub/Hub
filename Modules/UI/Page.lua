@@ -74,6 +74,8 @@ function Page:AddSection(Name)
 
         Size = UDim2.new(1, 0, 0, 150),
 
+        BackgroundTransparency = 1,
+
         Parent = Parent
 
     })
