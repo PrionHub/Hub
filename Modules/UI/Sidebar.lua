@@ -104,21 +104,17 @@ function Sidebar.AddButton(Properties)
 
         self.Selected = true
     
-        self.Stroke.Enabled = true
+        Animation.Play(self.Stroke, {
     
-        Animation.Tween(
+            Transparency = 0
     
-            self.Container,
+        })
     
-            Animation.Info.Fast,
+        Animation.Play(self.Container, {
     
-            {
+            BackgroundColor3 = Theme.Colors.SidebarSelected
     
-                BackgroundTransparency = 0.2
-    
-            }
-    
-        )
+        })
     
     end
     
@@ -126,21 +122,17 @@ function Sidebar.AddButton(Properties)
 
         self.Selected = false
     
-        self.Stroke.Enabled = false
+        Animation.Play(self.Stroke, {
     
-        Animation.Tween(
+            Transparency = 1
     
-            self.Container,
+        })
     
-            Animation.Info.Fast,
+        Animation.Play(self.Container, {
     
-            {
+            BackgroundColor3 = Theme.Colors.Background
     
-                BackgroundTransparency = 0
-    
-            }
-    
-        )
+        })
     
     end
 
