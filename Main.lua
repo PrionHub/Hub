@@ -44,27 +44,3 @@ Sidebar.Init(App)
 local UI = Build.Build()
 
 Sidebar.Build(UI)
-
-Sidebar.AddButton({
-    Name = "Main"
-})
-
-Sidebar.AddButton({
-    Name = "Game"
-})
-
-Sidebar.AddButton({
-    Name = "Visual"
-})
-
-Sidebar.AddButton({
-    Name = "Themes"
-})
-
-Sidebar.AddButton({
-    Name = "Settings"
-})
-
-Sidebar.Select("Main")
-
-print(#Hub.Pages)
